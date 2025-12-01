@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Antropometria - PROESP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Antropometria</h1>
+
+<form action="motores.html">
+
+  <fieldset>
+    <legend>Medidas Corporais</legend>
+
+    <label>Massa Corporal (kg)</label>
+    <input type="number" id="peso" step="0.1" required>
+
+    <label>Estatura (cm)</label>
+    <input type="number" id="altura" step="0.1" required>
+
+    <label>Envergadura (cm)</label>
+    <input type="number" step="0.1" required>
+  </fieldset>
+
+  <fieldset>
+    <legend>IMC (Calculado)</legend>
+
+    <input type="text" id="imc" readonly>
+    <div id="feedback-imc">Preencha peso e altura</div>
+  </fieldset>
+
+  <button type="submit">Próximo</button>
+
+</form>
+
+<script src="script.js"></script>
+</body>

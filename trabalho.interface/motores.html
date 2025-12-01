@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Testes Motores - PROESP</title>
+  <link rel="stylesheet" href="beleza.css">
+</head>
+<body>
+
+<h1>Testes Motores</h1>
+
+<form>
+
+  <fieldset>
+    <legend>Flexibilidade</legend>
+    <label>Sentar e Alcançar (cm)</label>
+    <input type="number" step="0.1">
+  </fieldset>
+
+  <fieldset>
+    <legend>Resistência Muscular</legend>
+    <label>Resistência Abdominal (repetições)</label>
+    <input type="number">
+  </fieldset>
+
+  <fieldset>
+    <legend>Potência e Velocidade</legend>
+
+    <label>Arremesso Medicineball (m)</label>
+    <input type="number" step="0.01">
+
+    <label>Salto Horizontal (cm)</label>
+    <input type="number" step="0.1">
+
+    <label>Corrida 20m (s)</label>
+    <input type="number" step="0.01">
+
+    <label>Teste do Quadrado (s)</label>
+    <input type="number" step="0.01">
+  </fieldset>
+
+  <fieldset>
+    <legend>Resistência Aeróbica</legend>
+    <label>Corrida de 6 minutos (m)</label>
+    <input type="number">
+  </fieldset>
+
+  <button type="button" onclick="finalizar()">Finalizar Avaliação</button>
+
+</form>
+
+<p id="mensagem-final"></p>
+
+<script>
+function finalizar() {
+  const msg = document.getElementById("mensagem-final");
+  msg.innerText = "✅ Avaliação finalizada com sucesso! Dados registrados (simulação).";
+  msg.style.background = "linear-gradient(90deg, #34a853, #0f9d58)";
+  msg.style.color = "white";
+  msg.style.padding = "15px";
+  msg.style.marginTop = "20px";
+  msg.style.textAlign = "center";
+  msg.style.borderRadius = "10px";
+}
+</script>
+
+<script>
+
+function salvarDadosMotores() {
+  const dados = {
+    flexibilidade: document.querySelector('input[type="number"]')?.value,
+    abdominal: document.querySelectorAll('input[type="number"]')[1]?.value,
+    arremesso: document.querySelectorAll('input[type="number"]')[2]?.value,
+    salto: document.querySelectorAll('input[type="number"]')[3]?.value,
+    velocidade: document.querySelectorAll('input[type="number"]')[4]?.value,
+    quadrado: document.querySelectorAll('input[type="number"]')[5]?.value,
+    corrida6min: document.querySelectorAll('input[type="number"]')[6]?.value
+  };
+  
+  
+  for (const [key, value] of Object.entries(dados)) {
+    if (value) {
+      localStorage.setItem(`teste_${key}`, value);
+    }
+  }
+  
+  const originalFinalizar = window.finalizar;
+  window.finalizar = function() {
+    salvarDadosMotores();
+    originalFinalizar();
+    
+    setTimeout(() => {
+      window.location.href = 'resultados.html';
+    }, 2000);
+  };
+}
+
+// Chama a função quando a página carrega
+document.addEventListener('DOMContentLoaded', salvarDadosMotores);
+</script>
+</body>
+</html>

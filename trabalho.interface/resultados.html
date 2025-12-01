@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Resultados - PROESP</title>
+  <link rel="stylesheet" href="beleza.css">
+  <style>
+    /* Estilos específicos para resultados */
+    .resumo-destaque {
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      border-radius: 15px;
+      padding: 30px;
+      margin: 20px 0;
+      text-align: center;
+      border: 2px solid #4285f4;
+    }
+    
+    .nota-geral {
+      font-size: 4rem;
+      font-weight: bold;
+      color: #4285f4;
+      margin: 20px 0;
+      text-shadow: 0 0 20px rgba(66, 133, 244, 0.5);
+    }
+    
+    .resultados-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+    
+    .card-resultado {
+      background: rgba(40, 40, 55, 0.9);
+      border-radius: 12px;
+      padding: 20px;
+      transition: transform 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .card-resultado:hover {
+      transform: translateY(-5px);
+      border-color: #4285f4;
+    }
+    
+    .card-titulo {
+      color: #b0b7ff;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    
+    .card-valor {
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 10px 0;
+      color: white;
+    }
+    
+    .card-status {
+      display: inline-block;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    
+    .status-bom {
+      background: linear-gradient(90deg, #34a853, #0f9d58);
+      color: white;
+    }
+    
+    .status-medio {
+      background: linear-gradient(90deg, #fbbc05, #f29900);
+      color: #333;
+    }
+    
+    .status-baixo {
+      background: linear-gradient(90deg, #ea4335, #d23c2e);
+      color: white;
+    }
+    
+    .recomendacoes-box {
+      background: rgba(30, 30, 45, 0.9);
+      border-radius: 15px;
+      padding: 25px;
+      margin: 25px 0;
+      border-left: 5px solid #fbbc05;
+    }
+    
+    .acoes-botoes {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+    
+    .btn-secundario {
+      background: linear-gradient(90deg, #6c757d, #5a6268) !important;
+    }
+    
+    @media (max-width: 768px) {
+      .resultados-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .acoes-botoes {
+        flex-direction: column;
+      }
+      
+      .acoes-botoes button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📊 Resultados da Avaliação</h1>
+    
+    <form id="formResultados">
+      <fieldset>
+        <legend>Resumo Geral</legend>
+        
+        <div class="resumo-destaque">
+          <h2>Seu Desempenho</h2>
+          <div class="nota-geral" id="notaGeral">--</div>
+          <p id="classificacaoGeral">Avaliação em andamento...</p>
+        </div>
+        
+        <div class="resultados-grid">
+          <!-- IMC -->
+          <div class="card-resultado">
+            <div class="card-titulo">Índice de Massa Corporal</div>
+            <div class="card-valor" id="valorIMC">--</div>
+            <div class="card-status" id="statusIMC">--</div>
+            <p>Baseado no seu peso e altura</p>
+          </div>
+          
+          <!-- Flexibilidade -->
+          <div class="card-resultado">
+            <div class="card-titulo">Flexibilidade</div>
+            <div class="card-valor" id="valorFlexibilidade">--</div>
+            <div class="card-status" id="statusFlexibilidade">--</div>
+            <p>Teste Sentar e Alcançar</p>
+          </div>
+          
+          <!-- Resistência Abdominal -->
+          <div class="card-resultado">
+            <div class="card-titulo">Resistência Abdominal</div>
+            <div class="card-valor" id="valorAbdominal">--</div>
+            <div class="card-status" id="statusAbdominal">--</div>
+            <p>Repetições em 1 minuto</p>
+          </div>
+          
+          <!-- Potência -->
+          <div class="card-resultado">
+            <div class="card-titulo">Potência de Membros</div>
+            <div class="card-valor" id="valorPotencia">--</div>
+            <div class="card-status" id="statusPotencia">--</div>
+            <p>Arremesso e Salto</p>
+          </div>
+          
+          <!-- Velocidade -->
+          <div class="card-resultado">
+            <div class="card-titulo">Velocidade</div>
+            <div class="card-valor" id="valorVelocidade">--</div>
+            <div class="card-status" id="statusVelocidade">--</div>
+            <p>Corrida 20m</p>
+          </div>
+          
+          <!-- Resistência Aeróbica -->
+          <div class="card-resultado">
+            <div class="card-titulo">Resistência Aeróbica</div>
+            <div class="card-valor" id="valorAerobica">--</div>
+            <div class="card-status" id="statusAerobica">--</div>
+            <p>Corrida 6 minutos</p>
+          </div>
+        </div>
+      </fieldset>
+      
+      <div class="recomendacoes-box">
+        <h3>💡 Recomendações Baseadas nos Seus Resultados</h3>
+        <ul id="listaRecomendacoes">
+          <li>Preencha os dados nas páginas anteriores para ver recomendações personalizadas</li>
+        </ul>
+      </div>
+      
+      <div class="acoes-botoes">
+        <button type="button" class="btn-secundario" onclick="window.location.href='index.html'">
+          ↩ Voltar para Antropometria
+        </button>
+        <button type="button" class="btn-secundario" onclick="window.location.href='motores.html'">
+          ⚡ Editar Testes Motores
+        </button>
+        <button type="button" onclick="salvarResultados()">
+          💾 Salvar Resultados
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <script src="resultados.js"></script>
+</body>
+</html>

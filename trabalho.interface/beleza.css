@@ -1,0 +1,286 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  min-height: 100vh;
+  padding: 40px 20px;
+  color: #e0e0e0;
+}
+
+.container {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  font-size: 2.8rem;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 15px rgba(66, 133, 244, 0.7);
+  background: linear-gradient(90deg, #4285f4, #34a853, #fbbc05, #ea4335);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgba(66, 133, 244, 0.3);
+}
+
+form {
+  background: rgba(25, 25, 35, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+form:hover {
+  transform: translateY(-5px);
+}
+
+label {
+  font-weight: 600;
+  display: block;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  color: #b0b7ff;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+/* Reset e configurações base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  min-height: 100vh;
+  padding: 40px 20px;
+  color: #e0e0e0;
+}
+
+/* Container principal */
+.container {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* Cabeçalho */
+h1 {
+  text-align: center;
+  color: white;
+  font-size: 2.8rem;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 15px rgba(66, 133, 244, 0.7);
+  background: linear-gradient(90deg, #4285f4, #34a853, #fbbc05, #ea4335);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgba(66, 133, 244, 0.3);
+}
+
+/* Formulário */
+form {
+  background: rgba(25, 25, 35, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+form:hover {
+  transform: translateY(-5px);
+}
+
+/* Labels */
+label {
+  font-weight: 600;
+  display: block;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  color: #b0b7ff;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+/* Campos de entrada */
+input, select {
+  width: 100%;
+  padding: 16px 20px;
+  margin-top: 5px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  background: rgba(40, 40, 55, 0.9);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #4285f4;
+  box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.2);
+  background: rgba(50, 50, 70, 0.9);
+}
+
+input:hover, select:hover {
+  border-color: rgba(66, 133, 244, 0.5);
+}
+
+/* Botão */
+button {
+  width: 100%;
+  padding: 18px;
+  margin-top: 30px;
+  background: linear-gradient(90deg, #4285f4, #5c6bc0);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(66, 133, 244, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.7s;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #5c6bc0, #4285f4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(66, 133, 244, 0.6);
+}
+
+button:hover::after {
+  left: 100%;
+}
+
+button:active {
+  transform: translateY(1px);
+  box-shadow: 0 3px 10px rgba(66, 133, 244, 0.4);
+}
+
+/* Fieldset */
+fieldset {
+  margin-bottom: 25px;
+  border: 2px solid rgba(66, 133, 244, 0.3);
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(30, 30, 45, 0.5);
+  transition: all 0.3s ease;
+}
+
+fieldset:hover {
+  border-color: rgba(66, 133, 244, 0.6);
+  background: rgba(35, 35, 50, 0.7);
+}
+
+legend {
+  padding: 0 15px;
+  font-weight: 600;
+  color: #b0b7ff;
+  font-size: 1.1rem;
+}
+
+/* Feedback IMC */
+#feedback-imc {
+  margin-top: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+/* Mensagem final */
+#mensagem-final {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: white;
+  background: #95E065;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  body {
+    padding: 20px 10px;
+  }
+  
+  h1 {
+    font-size: 2.2rem;
+  }
+  
+  form {
+    padding: 25px 20px;
+  }
+  
+  input, select, button {
+    padding: 14px;
+  }
+  
+  button {
+    font-size: 1.1rem;
+  }
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+form {
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* Efeitos extras */
+fieldset {
+  animation: fadeIn 0.8s ease-out 0.1s both;
+}
+
+input, select {
+  animation: fadeIn 0.8s ease-out 0.2s both;
+}
+
+button {
+  animation: fadeIn 0.8s ease-out 0.3s both;
+}
